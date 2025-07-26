@@ -90,7 +90,7 @@ El frontend se ejecuta en: http://localhost:5173
 
 ---
 
-** 📦 Endpoints del backend
+## 📦 Endpoints del backend
 | Método | Ruta                    | Descripción                           |
 | ------ | ----------------------- | ------------------------------------- |
 | GET    | `/auth/google`          | Inicia el login con Google            |
@@ -99,16 +99,16 @@ El frontend se ejecuta en: http://localhost:5173
 
 ---
 
-** 🧠 Tecnologías utilizadas
-+ Node.js
-+ Express
-+ Passport.js
-+ Google OAuth2
-+ React
-+ Vite
-+ dotenv
-+ express-session
-+ cors
+## 🧠 Tecnologías utilizadas
+- Node.js
+- Express
+- Passport.js
+- Google OAuth2
+- React
+- Vite
+- dotenv
+- express-session
+- cors
 
 ---
 ✍️ **Autor:** [Sheila Lara García](https://github.com/sheilalg10)
