@@ -21,7 +21,7 @@ function App() {
         </div>
       ) : (
         <a href="http://localhost:5000/auth/google">
-          Iniciar sesion con Google
+          Iniciar sesion
         </a>
       )}
     </div>
