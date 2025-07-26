@@ -14,11 +14,11 @@ Aplicacion web con autenticación **SSO (Single Sing-On)** usando **Google OAuth
 ---
 
 ## 📁 Estructura del proyecto
-
+```sh
 ProdigiosoVolcan-sso-app/
 ├── 📁 client/ # Frontend en React + Vite
 └── 📁 server/ # Backend en Express + Passport
-
+```
 ---
 
 ## 🚀 Requisitos
