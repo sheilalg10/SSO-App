@@ -15,6 +15,6 @@ services:
     container_name: prodigiosovolcan-client
     build: ./client
     ports:
-      - "9778:5173"
+      - "9778:9778"
     depends_on:
       - prodigiosovolcan-server
