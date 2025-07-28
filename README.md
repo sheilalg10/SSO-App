@@ -1,4 +1,4 @@
-# Google SSO App - Login con Google usando Node.js + React
+# Google SSO App - Login con Google
 
 Aplicacion web con autenticación **SSO (Single Sing-On)** usando **Google OAuth 2.0**.
 
@@ -6,18 +6,30 @@ Aplicacion web con autenticación **SSO (Single Sing-On)** usando **Google OAuth
 
 ## 🛠️ Tecnologías utilizadas
 
-- 🧠 **Backend**: Express + Passport.js
-- 💻 **Frontend**: React + Vite
-- 🔒 **Autenticación con Google**
-- 📦 **Persistencia de sesión vía cookies**
+- 🧠 Backend: Express.js + Passport.js (passport-google-oauth20)
+- 💻 Frontend: React (con Vite)
+- 🍪 Persistencia: Cookies (con express-session)
+- 🐳 Dockerizado con Docker Compose
+- 🌐 SSO con Google OAuth2
 
 ---
 
 ## 📁 Estructura del proyecto
 ```sh
 ProdigiosoVolcan-sso-app/
-├── 📁 client/ # Frontend en React + Vite
-└── 📁 server/ # Backend en Express + Passport
+├── 📁 server/
+│   ├── Dockerfile
+│   ├── index.js
+│   └── auth.js
+├── 📁 client/
+│   ├── Dockerfile
+│   ├── vite.config.js
+│   ├── index.html
+│   └── 📁 src/
+│       ├── App.jsx
+│       └── main.jsx
+├── docker-compose.yml
+└── .env
 ```
 ---
 
@@ -26,6 +38,7 @@ ProdigiosoVolcan-sso-app/
 - Node.js instalado (v18+ recomendado)
 - Cuenta de Google
 - Acceso a [Google Cloud Console](https://console.cloud.google.com)
+- Docker + Docker Compose
 
 ---
 
@@ -38,9 +51,13 @@ ProdigiosoVolcan-sso-app/
 3. Habilita **Google Identity Services**
 4. En **Credenciales**, crea un **ID de cliente de OAuth 2.0**
    - Tipo de aplicación: Aplicación Web
+   - Origenes autorizados de JavaScript
+     ```
+     http://localhost:9778
+     ```
    - URI de redirección autorizada:
      ```
-     http://localhost:5000/auth/google/callback
+     http://localhost:3001/auth/google/callback
      ```
 5. Copia el `CLIENT_ID` y `CLIENT_SECRET`
 
@@ -58,27 +75,31 @@ cd server
 npm install
 ```
 
-Dentro de **server/**, hay que crear un archivo **.env** con el siguiente contenido:
+### 4. Configurar el frontend
+
+```bash
+cd client
+npm install
+```
+
+## 🔐 Configura las variables de entorno
+Crear un archivo **.env** en la raiz del proyecto:
+
+```env
 CLIENT_ID=TU_CLIENT_ID
 CLIENT_SECRET=TU_CLIENT_SECRET
-
-### 4. Iniciar backend
-
-```bash
-npm start
+SESSION_SECRET=una_clave_secreta_segura
 ```
-El backend se ejecuta en: http://localhost:5000
-
-### 5. Configurar el frontend
-
-```bash
-cd ../client
-npm install
-npm run dev
-```
-El frontend se ejecuta en: http://localhost:5173
 
 ---
+
+## 🚀 Ejecutar la aplicación
+
+Desde la raiz del proyecto:
+
+```bash
+docker compose up --build
+```
 
 ## 🔐 Flujo de autenticación
 
