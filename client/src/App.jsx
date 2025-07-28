@@ -4,7 +4,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/user", {
+    fetch("http://localhost:3001/api/user", {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -20,8 +20,8 @@ function App() {
           <h1>Bienvenido {user}</h1>
         </div>
       ) : (
-        <a href="http://localhost:5000/auth/google">
-          Iniciar sesion
+        <a href="http://localhost:3001/auth/google">
+          <button>Iniciar sesión con Google</button>
         </a>
       )}
     </div>

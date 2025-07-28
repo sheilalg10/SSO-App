@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  prodigiosovolcan-server:
+    container_name: prodigiosovolcan-server
+    build: ./server
+    ports:
+      - "3001:3001"
+    environment:
+      - CLIENT_ID=${CLIENT_ID}
+      - CLIENT_SECRET=${CLIENT_SECRET}
+      - SESSION_SECRET=${SESSION_SECRET}
+
+  prodigiosovolcan-client:
+    container_name: prodigiosovolcan-client
+    build: ./client
+    ports:
+      - "9778:5173"
+    depends_on:
+      - prodigiosovolcan-server
