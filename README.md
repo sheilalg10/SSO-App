@@ -85,7 +85,7 @@ SESSION_SECRET=una_clave_secreta_segura
 ### 3. Ejecutar aplicación
 Antes de ejecutar la aplicación si la aplicación se ejecuta en **Windows** o **Mac** hay que instalar instala [Docker Desktop](https://www.docker.com/products/docker-desktop/). Si se hace desde **Linux** no hace falta la instalación.
 
-Una vez instalado **Docker Destop**, lo abriremos y esperaremos a que se inicie.
+Una vez instalado **Docker Desktop**, lo abriremos y esperaremos a que se inicie.
 
 Ahora desde la raiz del proyecto:
 
