@@ -4,7 +4,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/user", {
+    fetch("http://localhost:9778/api/user", {
       credentials: "include",
     })
       .then((res) => res.json())

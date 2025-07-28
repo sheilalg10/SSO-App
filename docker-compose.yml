@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  prodigiosovolcan:
+    container_name: prodigiosovolcan
+    build: ./server
+    ports:
+      - "9778:5000"
+    environment:
+      - CLIENT_ID=${CLIENT_ID}
+      - CLIENT_SECRET=${CLIENT_SECRET}
+    env_file:
+      - .env
