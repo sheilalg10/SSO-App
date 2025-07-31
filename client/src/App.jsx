@@ -14,10 +14,10 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {user ? (
         <div>
-          <h1>Bienvenido {user}</h1>
+          <h1>Bienvenid@ {user}</h1>
         </div>
       ) : (
         <a href="http://localhost:3001/auth/google">

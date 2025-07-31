@@ -16,19 +16,22 @@ app.use(cors({
 
 app.use(express.json())
 
+// Configuracion de las sesiones
 app.use(session({
     secret:process.env.SESSION_SECRET || 'mysecret',
     resave: false,
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        maxAge: 24 * 60 * 60 * 1000
+        maxAge: 24 * 60 * 60 * 1000 //1 día
     }
 }));
 
+// Inicialización de passport
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Devuelve los datos del usuario
 app.get('/api/user', (req, res) => {
     if (req.user) {
         res.json({ user: req.user.displayName });
