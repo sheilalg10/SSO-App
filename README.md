@@ -102,8 +102,6 @@ Esto hará:
 
 ## 🚀 Instalación y ejecución de la aplicación sin Docker (desarrollo local)
 
-### 1. Clonar repositorio
-
 ```bash
 git clone https://github.com/sheilalg10/SSO-App.git
 cd SSO-App
